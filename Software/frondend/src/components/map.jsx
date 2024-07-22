@@ -10,11 +10,13 @@ import { createMapLibreGlMapController } from "@maptiler/geocoding-control/mapli
 import "@maptiler/geocoding-control/style.css";
 import { round } from "@turf/turf";
 
+const backend_url = "http://192.168.65.5:5000";
+
 export default function Map() {
   let station_location = null;
 
   axios
-    .get("http://127.0.0.1:5000/station_db")
+    .get(backend_url + "/station_db")
     .then((response) => {
       station_location = response.data;
     })
@@ -26,7 +28,7 @@ export default function Map() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:5000/engine_db")
+      .get(backend_url + "/engine_db")
       .then((response) => {
         setEngineList(response.data);
       })
@@ -138,7 +140,7 @@ export default function Map() {
     };
     console.log(data);
     try {
-      const response = await axios.post(" http://127.0.0.1:5000/route", data);
+      const response = await axios.post(backend_url + "/route", data);
       if (response.status === 200) {
         const jsonData = response.data;
         console.log(jsonData);
