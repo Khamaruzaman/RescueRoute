@@ -1,0 +1,91 @@
+.map-wrap {
+    position: relative;
+    width: 100%;
+    height: calc(100vh);
+
+}
+
+.map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.geocoding {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.select-menu {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    z-index: 10;
+    margin: auto;
+    height: 30px;
+    color: #000000;
+    background-color: hsl(0, 0%, 100%);
+    border-color: #f2f2f2;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.direction-button {
+    position: absolute;
+    z-index: 10;
+    font-size: 14px;
+    color: #000000;
+    /* Adjust font size for a balanced look */
+    padding: 5px 16px;
+    /* Provide enough space for button text */
+    border: 1px solid #f2f2f2;
+    /* Optional border for the button */
+    border-radius: 4px;
+    /* Consistent rounded corners */
+    background-color: #f2f2f2;
+    /* Light background for visual distinction */
+    cursor: pointer;
+    /* Indicate interactivity with a pointer cursor */
+    transition: background-color 0.2s ease;
+    /* Smooth transition on hover */
+    top: 50px;
+    left: 160px;
+    height: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.direction-button:hover {
+    background-color: #0026ffa1;
+    /* border: 1px solid #ffffff; */
+    color: #ffffff;
+    /* Slightly darker background on hover */
+}
+
+.select-menu1 {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    z-index: 10;
+
+}
+
+.direction-details{
+    position: absolute;
+    z-index: 9;
+    background-color: #ffffff;
+    border-radius: 4px;
+    top: 100px;
+    left: 10px;
+    padding: 10px;
+    max-height: 10cm;
+    overflow-y: scroll;
+    max-width: 5cm;
+    overflow-x: scroll;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
