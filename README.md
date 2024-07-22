@@ -50,9 +50,10 @@ npm i <dependency_name>
 ```
 - Now to host the user side, run the command:
 ```
-npm run dev
+npm run dev -- --host 0.0.0.0
 ```
-- Now you can access the user side from the link: `http://localhost:5173/`
+- Now you can access the user side from the link: `http://localhost:5173/` and `http://<your_ip_address>:5000` (links will show after running the command).
+- You can find your ip adderss by typing `ipconfig` (Windows) or `ifconfig` (macOS/Linux) in a terminal. Look for your local network IP address (usually starts with 192.168).
 - There may be change in the link, so check the terminal after running the above command.
 
 ### Server Side Hosting
@@ -69,10 +70,10 @@ pip install <package_name>
 ```
 - Now to host the server side, run the command:
 ```
-flask run
+python app.py
 ```
-- can add `--debug` at the end for debugging purpose.
-- Now you can access the server side from the link: `http://localhost:5000/`
+- Now you can access the server side from the link: `http://localhost:5000/` and `http://<your_ip_address>:5000` (links will show after running the command).
+- You can find your ip adderss by typing `ipconfig` (Windows) or `ifconfig` (macOS/Linux) in a terminal. Look for your local network IP address (usually starts with 192.168).
 - There may be change in the link, so check the terminal after running the above command.
 
 #### Database setup
