@@ -42,7 +42,7 @@ export default function Map() {
   const [lng] = useState(76.95);
   const [lat] = useState(8.5);
   const [zoom] = useState(13);
-  const [API_KEY] = useState("RhjX0mDGqprpkICiETXV");
+  const [API_KEY] = useState("_YOUR_MAPTILERT_API_KEY_");
   const [mapController, setMapController] = useState();
   const [fireEngine, setFireEngine] = useState(null);
   const [clickCoordinates, setClickCoordinates] = useState(null);
