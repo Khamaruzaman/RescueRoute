@@ -4,6 +4,7 @@ import pandas as pd
 import networkx as nx
 import pandas_geojson as pdg
 from numpy import nan
+import math
 
 
 def road_class_to_kmph(road_class):
@@ -141,8 +142,14 @@ def create_route(start, end, vehicle_width):
     travel_time = travel_time * 1.3
 
     # Calculate the paths by walking and cycling
-    shortest_path_nodes = nx.dijkstra_path(G, source=orig_node_id, target=dest_node_id, weight='length')
-    fastest_path_nodes = nx.dijkstra_path(G, source=orig_node_id, target=dest_node_id, weight='travel_time_seconds')
+    shortest_path_nodes = nx.astar_path(G, source=orig_node_id, target=dest_node_id, weight='length',
+                                        heuristic=lambda u, v: math.sqrt(
+                                            (G.nodes[u]['latitude'] - G.nodes[v]['latitude']) ** 2 + (
+                                                        G.nodes[u]['longitude'] - G.nodes[v]['longitude']) ** 2))
+    fastest_path_nodes = nx.astar_path(G, source=orig_node_id, target=dest_node_id, weight='travel_time_seconds',
+                                       heuristic=lambda u, v: math.sqrt(
+                                           (G.nodes[u]['latitude'] - G.nodes[v]['latitude']) ** 2 + (
+                                                       G.nodes[u]['longitude'] - G.nodes[v]['longitude']) ** 2))
 
     shortest_path_coordinates = id_to_lnglat(gdf=nodes, id_list=shortest_path_nodes)
 
